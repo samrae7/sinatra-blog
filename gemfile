@@ -8,6 +8,9 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
+gem 'json'
+gem 'multi_json'
+gem 'shotgun'
 
 group :development do
  gem 'sqlite3'
