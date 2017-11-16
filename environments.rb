@@ -15,3 +15,8 @@ configure :production do
    :encoding => 'utf8'
  )
 end
+
+configure :test do
+  set :database, 'sqlite3:sinatra-blog-test.db'
+  set :show_exceptions, true
+end

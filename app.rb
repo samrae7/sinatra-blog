@@ -34,11 +34,13 @@ get "/" do
   json @posts
 end
 
+#Get all posts
 get "/posts/:id" do
  @post = Post.find(params[:id])
  json @post
 end
 
+#Get single post
 post "/posts/:id" do
  @post = Post.find(params[:id])
  json @post
@@ -54,3 +56,16 @@ post "/posts" do
   json @post.errors
  end
 end
+
+#Update
+put "/posts/:id" do
+ @post = Post.find(params[:id])
+ update = MultiJson.load request.body.read
+ if @post.update_attributes(update)
+  json @post
+ else
+  json @post.errors
+ end
+end
+
+
